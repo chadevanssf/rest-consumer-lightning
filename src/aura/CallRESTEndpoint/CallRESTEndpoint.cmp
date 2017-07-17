@@ -1,0 +1,57 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="sourceUrl" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:layout multipleRows="true" horizontalAlign="space">
+        <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+            <lightning:card >
+                <aura:set attribute="title">
+                    Enter info for REST call out
+                </aura:set>
+                <aura:set attribute="footer">
+                    <lightning:button label="Call" value="callZipInfo" onclick="{!c.makeCallOut}" />
+                </aura:set>
+                <aura:set attribute="actions">
+                    <lightning:button label="Call" value="callZipInfo" onclick="{!c.makeCallOut}" />
+                </aura:set>
+                <p class="slds-p-horizontal_small">
+                    <div class="slds-form slds-form_stacked">
+                        <lightning:input label="URL" name="url" value="{!v.sourceUrl}" />
+                    </div>
+                </p>
+            </lightning:card>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+            <lightning:card >
+                <aura:set attribute="title">
+                    Testing with static data
+                </aura:set>
+                <p class="slds-p-horizontal_small">
+                    <lightning:button label="Single Object" value="singleObject" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Single Object With Array" value="singleObjectWithArray" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Single Object With Array of Array" value="singleObjectWithArrayOfArray" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Single Object With Object" value="singleObjectWithObject" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Single Object With Array And Object" value="singleObjectWithArrayAndObject" onclick="{!c.makeCallOut}" />
+                </p>
+                <p class="slds-p-horizontal_small">
+                    <lightning:button label="Object Array" value="objectArray" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Object Array With Array" value="objectArrayWithArray" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Object Array With Array of Array" value="objectArrayWithArrayOfArray" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Object Array With Object" value="objectArrayWithObject" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Object Array With Array And Object" value="objectArrayWithArray" onclick="{!c.makeCallOut}" />
+                </p>
+            </lightning:card>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12" flexibility="auto" padding="around-small">
+            <lightning:card >
+                <aura:set attribute="title">
+                    Resulting JSON, table formatted
+                </aura:set>
+                <p class="slds-p-horizontal_small">
+                    <c:Json2Apex aura:id="json2apex" />
+                </p>
+            </lightning:card>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

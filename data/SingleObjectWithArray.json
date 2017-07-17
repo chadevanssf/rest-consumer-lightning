@@ -1,0 +1,10 @@
+{
+	"color": "red",
+	"value": "#f00",
+	"items":[
+		{
+			"name":"ball",
+			"quantity":"1"
+		}
+	]
+}

@@ -1,0 +1,18 @@
+[
+	{
+		"color": "red",
+		"value": "#f00",
+		"value":{
+			"high":"5",
+			"low":"3"
+		}
+	},
+	{
+		"color": "black",
+		"value": "#000",
+		"value":{
+			"high":"5000",
+			"low":"3000"
+		}
+	}
+]

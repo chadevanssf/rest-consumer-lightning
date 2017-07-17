@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CallRESTEndpoint</members>
+        <members>Json2Apex</members>
+        <members>strike_dataGrid</members>
+        <members>strike_row</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+    	<members>Json2ApexController</members>
+        <members>ObjectArray_Test</members>
+        <members>ObjectArrayClass</members>
+        <members>ObjectArrayWithArray_Test</members>
+        <members>ObjectArrayWithArrayAndObject_Test</members>
+        <members>ObjectArrayWithArrayAndObjectClass</members>
+        <members>ObjectArrayWithArrayClass</members>
+        <members>ObjectArrayWithArrayOfArray_Test</members>
+        <members>ObjectArrayWithArrayOfArrayClass</members>
+        <members>ObjectArrayWithObject_Test</members>
+        <members>ObjectArrayWithObjectClass</members>
+        <members>SingleObject_Test</members>
+        <members>SingleObjectClass</members>
+        <members>SingleObjectWithArray_Test</members>
+        <members>SingleObjectWithArrayAndObject_Test</members>
+        <members>SingleObjectWithArrayAndObjectClass</members>
+        <members>SingleObjectWithArrayClass</members>
+        <members>SingleObjectWithArrayOfArray_Test</members>
+        <members>SingleObjectWithArrayOfArrayClass</members>
+        <members>SingleObjectWithObject_Test</members>
+        <members>SingleObjectWithObjectClass</members>
+        <members>ZipInfoClass</members>
+        <name>ApexClass</name>
+    </types>
+    <version>38.0</version>
+</Package>

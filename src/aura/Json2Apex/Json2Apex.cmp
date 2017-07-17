@@ -1,0 +1,17 @@
+<aura:component controller="Json2ApexController">
+    <aura:attribute name="restUrl" type="String" access="private" />
+    <aura:attribute name="methodName" type="String" access="private" />
+    <aura:attribute name="hasData" type="Boolean" default="false" access="private" />
+    <aura:attribute name="data" type="Object" access="private" />
+    
+    <aura:method name="updateInputs" action="{!c.changeInputs}" description="When you want to set or update the url and method"> 
+        <aura:attribute name="url" type="String" />
+        <aura:attribute name="method" type="String" />
+    </aura:method>
+    
+    <aura:if isTrue="{!v.hasData}">
+        <div class="slds-scrollable">
+            <c:strike_dataGrid data="{!v.data}" responsive="true" />
+        </div>
+    </aura:if>
+</aura:component>

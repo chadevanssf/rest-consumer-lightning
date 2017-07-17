@@ -1,0 +1,8 @@
+{
+	"color": "red",
+	"value": "#f00",
+	"value":{
+		"high":"5",
+		"low":"3"
+	}
+}
