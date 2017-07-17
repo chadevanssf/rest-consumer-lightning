@@ -11,7 +11,7 @@ public class ObjectArrayWithObject_Test {
 		'	{'+
 		'		\"color\": \"red\",'+
 		'		\"value\": \"#f00\",'+
-		'		\"value\":{'+
+		'		\"valuation\":{'+
 		'			\"high\":\"5\",'+
 		'			\"low\":\"3\"'+
 		'		}'+
@@ -19,7 +19,7 @@ public class ObjectArrayWithObject_Test {
 		'	{'+
 		'		\"color\": \"black\",'+
 		'		\"value\": \"#000\",'+
-		'		\"value\":{'+
+		'		\"valuation\":{'+
 		'			\"high\":\"5000\",'+
 		'			\"low\":\"3000\"'+
 		'		}'+
@@ -29,7 +29,7 @@ public class ObjectArrayWithObject_Test {
 		System.assert(r != null);
 
 		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		ObjectArrayWithObjectClass.Value objValue = new ObjectArrayWithObjectClass.Value(System.JSON.createParser(json));
+		ObjectArrayWithObjectClass.Valuation objValue = new ObjectArrayWithObjectClass.Valuation(System.JSON.createParser(json));
 		System.assert(objValue != null);
 		System.assert(objValue.high == null);
 		System.assert(objValue.low == null);
@@ -39,5 +39,6 @@ public class ObjectArrayWithObject_Test {
 		System.assert(objObjectArrayWithObject != null);
 		System.assert(objObjectArrayWithObject.color == null);
 		System.assert(objObjectArrayWithObject.value == null);
+		System.assert(objObjectArrayWithObject.valuation == null);
 	}
 }

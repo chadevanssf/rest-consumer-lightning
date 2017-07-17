@@ -39,7 +39,7 @@
                     <lightning:button label="Object Array With Array" value="objectArrayWithArray" onclick="{!c.makeCallOut}" />
                     <lightning:button label="Object Array With Array of Array" value="objectArrayWithArrayOfArray" onclick="{!c.makeCallOut}" />
                     <lightning:button label="Object Array With Object" value="objectArrayWithObject" onclick="{!c.makeCallOut}" />
-                    <lightning:button label="Object Array With Array And Object" value="objectArrayWithArray" onclick="{!c.makeCallOut}" />
+                    <lightning:button label="Object Array With Array And Object" value="objectArrayWithArrayAndObject" onclick="{!c.makeCallOut}" />
                 </p>
             </lightning:card>
         </lightning:layoutItem>

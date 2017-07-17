@@ -93,7 +93,7 @@ public with sharing class Json2ApexController
     }
     private static String getSingleObjectWithObjectJSON(String Url)
     {
-        return '{"color":"red","value":{"high":"5","low":"3"}}';
+        return '{"color":"red","value":"#f00","valuation":{"high":"5","low":"3"}}';
     }
     
     @AuraEnabled
@@ -111,7 +111,7 @@ public with sharing class Json2ApexController
     }
     private static String getSingleObjectWithArrayAndObjectJSON(String Url)
     {
-        return '{"color":"red","value":{"high":"5","low":"3"},"items":[{"name":"ball","quantity":"1"}]}';
+        return '{"color":"red","value":"#f00","items":[{"name":"ball","quantity":"1"}],"valuation":{"high":"5","low":"3"}}';
     }
 
     @AuraEnabled
@@ -163,7 +163,7 @@ public with sharing class Json2ApexController
     }
     private static String getObjectArrayWithObjectJSON(String Url)
     {
-        return '[{"color":"red","value":{"high":"5","low":"3"}},{"color":"black","value":{"high":"5000","low":"3000"}}]';
+        return '[{"color":"red","value":"#f00","valuation":{"high":"5","low":"3"}},{"color":"black","value":"#000","valuation":{"high":"5000","low":"3000"}}]';
     }
 
     @AuraEnabled
@@ -176,7 +176,7 @@ public with sharing class Json2ApexController
     }
     private static String getObjectArrayWithArrayAndObjectJSON(String Url)
     {
-        return '[{"color":"red","value":{"high":"5","low":"3"},"items":[{"name":"ball","quantity":"1"}]},{"color":"black","value":{"high":"5000","low":"3000"},"items":[{"name":"piano","quantity":"2"}]}]';
+        return '[{"color":"red","value":"#f00","items":[{"name":"ball","quantity":"1"}],"valuation":{"high":"5","low":"3"}},{"color":"black","value":"#000","items":[{"name":"piano","quantity":"2"}],"valuation":{"high":"5000","low":"3000"}}]';
     }
 
     /*

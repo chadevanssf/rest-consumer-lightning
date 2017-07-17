@@ -11,10 +11,15 @@
                 var records = response.getReturnValue();
                 
                 var disCols = [];
-                records.forEach(function(record) {
+                if (records && records.length > 0) {
+                    var record = records[0];
                     var localDisCols = this.createConfig(record);
                     disCols = disCols.concat(localDisCols);
-                }, this);
+                }
+                /*records.forEach(function(record) {
+                    var localDisCols = this.createConfig(record);
+                    disCols = disCols.concat(localDisCols);
+                }, this);*/
                 
                 var data = {
                     columns: disCols,
@@ -38,16 +43,23 @@
         Object.keys(record).forEach(function(key) {
             if (Array.isArray(record[key])) {
                 // only review the first entry
-                var localDisCols = this.createConfig(record[key][0]);
+                var arrDisCols = this.createConfig(record[key][0]);
                 disCols.push({
                     "sortable":false,
                     "label":key,
                     "dataType":"ARRAY",
                     "name":key,
-                    "arrayData":localDisCols
+                    "arrayData":arrDisCols
                 });
             } else if (typeof record[key] === 'object' && !Array.isArray(record[key])) {
-                
+                var objDisCols = this.createConfig(record[key]);
+                disCols.push({
+                    "sortable":false,
+                    "label":key,
+                    "dataType":"OBJECT",
+                    "name":key,
+                    "arrayData":objDisCols
+                });
             } else {
                 disCols.push({
                     "sortable":true,

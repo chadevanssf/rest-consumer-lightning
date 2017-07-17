@@ -2,7 +2,7 @@
 	{
 		"color": "red",
 		"value": "#f00",
-		"value":{
+		"valuation":{
 			"high":"5",
 			"low":"3"
 		}
@@ -10,7 +10,7 @@
 	{
 		"color": "black",
 		"value": "#000",
-		"value":{
+		"valuation":{
 			"high":"5000",
 			"low":"3000"
 		}

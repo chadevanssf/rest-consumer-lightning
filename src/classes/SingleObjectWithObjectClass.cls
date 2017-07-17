@@ -19,7 +19,8 @@ public class SingleObjectWithObjectClass {
 
 	public class SingleObjectWithObject {
 		@AuraEnabled public String color {get;set;} 
-		@AuraEnabled public Value value {get;set;} 
+		@AuraEnabled public String value {get;set;} 
+		@AuraEnabled public Valuation valuation {get;set;} 
 
 		public SingleObjectWithObject(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
@@ -28,8 +29,10 @@ public class SingleObjectWithObjectClass {
 					if (parser.nextToken() != JSONToken.VALUE_NULL) {
 						if (text == 'color') {
 							color = parser.getText();
-						} else if (text == 'value') {
-							value = new Value(parser);
+                        } else if (text == 'value') {
+                            value = parser.getText();
+						} else if (text == 'valuation') {
+							valuation = new Valuation(parser);
 						} else {
 							System.debug(LoggingLevel.WARN, 'SingleObjectWithObject consuming unrecognized property: '+text);
 							consumeObject(parser);
@@ -40,11 +43,11 @@ public class SingleObjectWithObjectClass {
 		}
 	}
 	
-	public class Value {
+	public class Valuation {
 		@AuraEnabled public String high {get;set;} 
 		@AuraEnabled public String low {get;set;} 
 
-		public Value(JSONParser parser) {
+		public Valuation(JSONParser parser) {
 			while (parser.nextToken() != JSONToken.END_OBJECT) {
 				if (parser.getCurrentToken() == JSONToken.FIELD_NAME) {
 					String text = parser.getText();
@@ -54,7 +57,7 @@ public class SingleObjectWithObjectClass {
 						} else if (text == 'low') {
 							low = parser.getText();
 						} else {
-							System.debug(LoggingLevel.WARN, 'Value consuming unrecognized property: '+text);
+							System.debug(LoggingLevel.WARN, 'Valuation consuming unrecognized property: '+text);
 							consumeObject(parser);
 						}
 					}

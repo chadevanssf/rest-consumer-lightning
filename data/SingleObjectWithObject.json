@@ -1,7 +1,7 @@
 {
 	"color": "red",
 	"value": "#f00",
-	"value":{
+	"valuation":{
 		"high":"5",
 		"low":"3"
 	}

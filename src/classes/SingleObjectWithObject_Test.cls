@@ -10,7 +10,7 @@ public class SingleObjectWithObject_Test {
 		String json = '{'+
 		'	\"color\": \"red\",'+
 		'	\"value\": \"#f00\",'+
-		'	\"value\":{'+
+		'	\"valuation\":{'+
 		'		\"high\":\"5\",'+
 		'		\"low\":\"3\"'+
 		'	}'+
@@ -23,9 +23,10 @@ public class SingleObjectWithObject_Test {
 		System.assert(objSingleObjectWithObject != null);
 		System.assert(objSingleObjectWithObject.color == null);
 		System.assert(objSingleObjectWithObject.value == null);
+		System.assert(objSingleObjectWithObject.valuation == null);
 
 		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		SingleObjectWithObjectClass.Value objValue = new SingleObjectWithObjectClass.Value(System.JSON.createParser(json));
+		SingleObjectWithObjectClass.Valuation objValue = new SingleObjectWithObjectClass.Valuation(System.JSON.createParser(json));
 		System.assert(objValue != null);
 		System.assert(objValue.high == null);
 		System.assert(objValue.low == null);

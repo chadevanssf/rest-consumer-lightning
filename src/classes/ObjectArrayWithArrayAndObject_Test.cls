@@ -17,7 +17,7 @@ public class ObjectArrayWithArrayAndObject_Test {
 		'				\"quantity\":\"1\"'+
 		'			}'+
 		'		],'+
-		'		\"value\":{'+
+		'		\"valuation\":{'+
 		'			\"high\":\"5\",'+
 		'			\"low\":\"3\"'+
 		'		}'+
@@ -31,7 +31,7 @@ public class ObjectArrayWithArrayAndObject_Test {
 		'				\"quantity\":\"2\"'+
 		'			}'+
 		'		],'+
-		'		\"value\":{'+
+		'		\"valuation\":{'+
 		'			\"high\":\"5000\",'+
 		'			\"low\":\"3000\"'+
 		'		}'+
@@ -45,10 +45,11 @@ public class ObjectArrayWithArrayAndObject_Test {
 		System.assert(objObjectArrayWithArrayAndObject != null);
 		System.assert(objObjectArrayWithArrayAndObject.color == null);
 		System.assert(objObjectArrayWithArrayAndObject.value == null);
+		System.assert(objObjectArrayWithArrayAndObject.valuation == null);
 		System.assert(objObjectArrayWithArrayAndObject.items == null);
 
 		json = '{\"TestAMissingObject\": { \"TestAMissingArray\": [ { \"TestAMissingProperty\": \"Some Value\" } ] } }';
-		ObjectArrayWithArrayAndObjectClass.Value objValue = new ObjectArrayWithArrayAndObjectClass.Value(System.JSON.createParser(json));
+		ObjectArrayWithArrayAndObjectClass.Valuation objValue = new ObjectArrayWithArrayAndObjectClass.Valuation(System.JSON.createParser(json));
 		System.assert(objValue != null);
 		System.assert(objValue.high == null);
 		System.assert(objValue.low == null);

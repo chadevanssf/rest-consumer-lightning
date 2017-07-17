@@ -7,8 +7,8 @@
             var dataTypeByName = {};
             columns.forEach(function(column){
                 dataTypeByName[column.name] = column.dataType;
-                if (column.dataType === 'ARRAY') {
-                    dataTypeByName[column.name + 'ARRAY'] = column;
+                if (column.dataType === 'OBJECT' || column.dataType === 'ARRAY') {
+                    dataTypeByName[column.name + column.dataType] = column;
                 }
             });
             var rows = data.rows;
@@ -67,14 +67,21 @@
                         }
                         
                         if (Array.isArray(field.value)) {
-                            var subData = {
+                            var arrData = {
                                 columns: dataTypeByName[key + 'ARRAY'].arrayData,
                                 rows: field.value
                             };
                             
-                            field.value = subData;
+                            field.value = arrData;
                         } else if (typeof field.value === 'object' && !Array.isArray(field.value)) {
+                            var objRows = [];
+                            objRows.push(field.value);
+                            var objData = {
+                                columns: dataTypeByName[key + 'OBJECT'].arrayData,
+                                rows: objRows
+                            };
                             
+                            field.value = objData;
                         }
                         fields.push(field);
                     }
